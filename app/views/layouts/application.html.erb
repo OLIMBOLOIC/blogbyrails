@@ -4,12 +4,30 @@
     <title>Loloblog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,600,700|Josefin+Slab:300,400,600,700" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <div id="sidebar">
+      <div id="logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+      <ul>
+        <li class="category">Mes Sites Web</li>
+        <li><%= link_to "Blog", root_path %>  </li>
+        <li>A propos de Moi</li>
+      </ul>
+      <ul>
+        <li class="category">Mon Réseau</li>
+        <li> <a href="https://www.facebook.com/lolo.indochine">Facebook</a> </li>
+        <li> <a href="https://github.com/OLIMBOLOIC">Github</a> </li>
+        <%# <li> <a href="#"></a> </li>
+      <li> <a href="#"></a> </li> %>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

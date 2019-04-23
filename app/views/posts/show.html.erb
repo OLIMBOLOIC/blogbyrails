@@ -1,0 +1,9 @@
+<h1 class="title">
+    <%= @post.titre %>
+</h1>
+<P class="date">
+  Publié il y a <%= time_ago_in_words(@post.created_at) %>
+</P>
+<P class="contenu">
+  <%= @post.contenu %>
+</P>
