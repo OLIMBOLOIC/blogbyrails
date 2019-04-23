@@ -4,6 +4,8 @@
 </h1>
 <P class="date">
   Publié il y a <%= time_ago_in_words(@post.created_at) %>
+  | <span id="edit"><%= link_to "Modifier", edit_post_path(@post) %> </span>
+  | <span id="delete"><%= link_to "Supprimer", post_path(@post), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir le supprimer?' } %> </span>
 </P>
 <P class="contenu">
   <%= @post.contenu %>

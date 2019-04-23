@@ -204,8 +204,14 @@ a {
          }
     }
 }
+#edit{
+    color:goldenrod;
+}
+#delete{
+    color:orangered;
+}
 #page_wrapper {
-    padding: 5em 20em;
+    padding: 5em 10em;
     #profile_image {
         width: 300px;
         float: left;
