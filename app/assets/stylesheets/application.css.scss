@@ -37,24 +37,24 @@ a {
     left: 0;
     top: 0;
     height: 100%;
-    background:  #b61924;
+    background:  #ffedaf;
     padding: 7em 0 0 0;
     // border-right: 3px solid #ffcc5c;
-    #logo {
-        width: 40px;
-        position: absolute;
-        right: 3em;
-        top: 3em;
-    }
+    // #logo {
+    //     right: 1em;
+    //     top: 1em;
+    //     margin-top: -200px;
+    //     margin-bottom: -150px;
+    // }
     ul {
         list-style: none;
         text-align: right;
         padding-right: 3em;
         .category{
             font-weight: 700;
-            font-size: .8em;
+            font-size: 1em;
             text-transform: uppercase;
-            color: #33acb7;
+            color: #8bd7b1;
         }
         li{
             padding: .5em 0;
@@ -67,7 +67,7 @@ a {
                 -ms-transition: all .4s ease;
                 -o-transition: all .4s ease;
                 &:hover{
-                    color:#33acb7;
+                    color:#8bd7b1;
                 }
             }
         }

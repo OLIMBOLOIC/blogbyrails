@@ -6,10 +6,12 @@
         <p class="comment_body"> <%= commentaire.commentaire %></p>
         <p class="comment_time"> il y a <%= time_ago_in_words(commentaire.created_at) %></p>
     </div>
+     <% if user_signed_in? %>
      <p>
       <%= link_to 'Supprimer le commentaire', [commentaire.post, commentaire],
       method: :delete,
       class: "button",
       data: {confirm: 'Etes-vous sûr ?'}  %>
       </p>
+       <% end %>
 </div>

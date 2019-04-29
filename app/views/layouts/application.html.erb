@@ -16,9 +16,9 @@
         <% end %>
       </div>
       <ul>
-        <li class="category">Mes Sites Web</li>
+        <li class="category">Menu</li>
         <li><%= link_to "Blog", root_path %>  </li>
-        <li>A propos de Moi</li>
+        <li><%= link_to "Mon Profil", about_path %></li>
       </ul>
       <ul>
         <li class="category">Mon Réseau</li>
@@ -27,20 +27,29 @@
         <%# <li> <a href="#"></a> </li>
       <li> <a href="#"></a> </li> %>
       </ul>
-        <p class="sign_in">Se Connecter (Admin)</p>
+       <% if !user_signed_in? %>
+      <p class="sign_in">Se Connecter (Admin)</p>
+       <% end %>
     </div>
     <div id="main_content">
       <div id="header">
-      <p>Tous les posts</p>
-      <div class="buttons">
-        <button class="button"><%= link_to "Nouveau Post", new_post_path  %></button>
-        <button class="button">Se déconnecter</button>
-      </div>
+        <% if current_page?(root_path) %>
+          <p>Tous les posts</p>
+        <% elsif current_page?(about_path) %>
+          <p>A propos</p>
+        <% else %>
+          <%= link_to "Retour à tous les posts", root_path %>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="buttons">
+            <button class="button"><%= link_to "Nouveau Post", new_post_path  %></button>
+            <button class="button">Se déconnecter</button>
+          </div>
+        <% end %>
       </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= yield %>
     </div>
-  
   </body>
 </html>
