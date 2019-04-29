@@ -2,7 +2,6 @@
   <h1 class="title">
     <%= @post.titre %>
 </h1>
-<p> <%= @post.utilisateur.email %> </p>
 <P class="date">
   Publié il y a <%= time_ago_in_words(@post.created_at) %>
   | <span id="edit"><%= link_to "Modifier", edit_post_path(@post) %> </span>
@@ -13,6 +12,7 @@
 </P>
 <br>
 <div id="comments">
+
   <h2><%= @post.commentaires.count %> commentaires </h2>
   <%= render @post.commentaires %>
   <hr>
